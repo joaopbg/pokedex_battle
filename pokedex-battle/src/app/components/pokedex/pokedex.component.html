@@ -1,0 +1,54 @@
+<div  class="layout">
+    <mat-card class="card side-card">
+        <mat-card-title class="center">pokedex</mat-card-title>
+
+        <form [formGroup]="form">
+            <mat-form-field color="warn" appearance="fill">
+                <mat-label>Pokedex Num.</mat-label>
+                <input type="number" matInput formControlName="pokemonNumber">
+            </mat-form-field>
+
+            <mat-form-field color="warn" appearance="fill">
+                <mat-label>Pokemon Name</mat-label>
+                <input type="text" matInput placeholder="charizard" formControlName="pokemonName">
+            </mat-form-field>
+        </form>
+        <button mat-button type="submit" (click)="getPokemon()">
+            <mat-icon>search</mat-icon>
+        </button>
+        <button mat-button type="submit" (click)="getPokemonStatus()">
+            stats
+        </button>
+    </mat-card>
+    <mat-card class="card main-card">
+        <div>
+            {{ pokemonName }}
+        </div>
+        <div>
+            <img [src]="pokemonImg">
+        </div>
+        <div>
+            <br>
+            <label>HP: {{ pokemonStats.hp }} </label>
+            <br>
+            <br>
+            <label>Attack: {{ pokemonStats.attack }} </label>
+            <br>
+            <br>
+            <label>Defense: {{ pokemonStats.defense }} </label>
+            <br>
+            <br>
+            <label>Sp Atk: {{ pokemonStats.spAtk }} </label>
+            <br>
+            <br>
+            <label>Sp Def: {{ pokemonStats.spDefense }} </label>
+            <br>
+            <br>
+            <label>Speed: {{ pokemonStats.speed }} </label>
+            <br>
+            
+
+        </div>
+    </mat-card>
+    
+</div>
